@@ -1,13 +1,11 @@
 
-var rpio = require('rpio');
-var watson = require('watson-developer-cloud');
-var config = require('./config');  // gets our username and passwords from the config.js files
-var exec = require('child_process').exec;
-var fs = require('fs');
-
-//var text_to_speech = watson.text_to_speech(config.TextToSpeech);
-
-var speech_to_text = watson.speech_to_text(config.SpeechToText);
+var rpio = require('rpio'),
+    watson = require('watson-developer-cloud'),
+    config = require('./config'),  // gets our username and passwords from the config.js files
+    exec = require('child_process').execSync,
+    fs = require('fs'),
+    text_to_speech = watson.text_to_speech(config.TextToSpeech),
+    speech_to_text = watson.speech_to_text(config.SpeechToText);
 
 // Initiate Microphone Instance to Get audio samples
 var mic = require('mic');
@@ -29,8 +27,9 @@ micInstance.start();
 
 initPins();
 
-console.log("TJBot is listening, you may speak now.");
+speak(config.Speak.greet);
 
+console.log("TJBot is listening, you may speak now.");
 
 var recognizeparams = {
   content_type: 'audio/l16; rate=44100; channels=2',
@@ -53,10 +52,10 @@ textStream.on('error', function(err) {
 });
 
 function parseText(str){
-    var containsTurn = str.indexOf("turn") >= 0;
-    var containsChange = str.indexOf("change") >= 0;
-    var containsSet = str.indexOf("set") >= 0;
-    var containsLight = (str.indexOf("light") >= 0);
+    var containsTurn = (str.indexOf("turn") >= 0),
+      containsChange = str.indexOf("change") >= 0,
+      containsSet = str.indexOf("set") >= 0,
+      containsLight = (str.indexOf("light") >= 0);
     if ((containsTurn || containsChange || containsSet ) && containsLight) {
         parseCommand(str);
     }
@@ -68,14 +67,15 @@ var commandList = {
 }
 
 /*Initialize the pins*/
-var initPins = function(){
+function initPins(){
   rpio.open(config.Pins.LIGHT_PIN,rpio.OUTPUT,rpio.LOW);
 }
 
 var switchLight = function(gpioVal){
+  //console.log('switchLight: ', gpioVal);
   rpio.write(config.Pins.LIGHT_PIN,gpioVal);
 }
-// ----  reset LED before exit
+// reset the pins before exist
 process.on('SIGINT', function () {
     initPins();
     process.nextTick(function () { process.exit(0); });
@@ -85,8 +85,33 @@ function parseCommand(msg){
   var words = msg.split(" ");
    for(var i=0; i < words.length; i++){
      if (words[i] in commandList){
-        switchLight(commandList[words[i]]);
+        processCommand(words[i]);
         break;
      }
    }
+}
+
+var processCommand = function(command){
+  speak(config.Speak[command]);
+  setTimeout(function(){
+    switchLight(commandList[command])
+  },5000)
+}
+
+function speak(text){
+    //micInstance.stop();
+    var params = {
+        text: text,
+        voice: config.TextToSpeech.voice,
+        accept: 'audio/wav'
+    };
+    /* Streaming the resulting audio to file and play the file using aplay */
+
+    text_to_speech.synthesize(params).pipe(fs.createWriteStream('output.wav')).on('close', function() {
+        var create_audio = exec('aplay output.wav', function(error, stdout, stderr) {
+            if (error !== null) {
+                console.log('Error occurred while playing back: ' + error);
+            }
+        });
+    });
 }
