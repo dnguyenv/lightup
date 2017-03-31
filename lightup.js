@@ -26,6 +26,9 @@ micInputStream.on('silence', function() {
     // detect silence.
 });
 micInstance.start();
+
+initPins();
+
 console.log("TJBot is listening, you may speak now.");
 
 
