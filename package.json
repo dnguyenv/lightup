@@ -1,0 +1,29 @@
+{
+  "name": "LightUp",
+  "version": "1.0.0",
+  "description": "Thien An bot LightUp recipe",
+  "main": "lightup.js",
+  "scripts": {
+    "test": "node lightup.js",
+    "start": "node lightup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.ibm.com:dnguyenv/lightup.git"
+  },
+  "keywords": [
+    "Watson",
+    "IBM",
+    "Speech",
+    "To",
+    "Text",
+    "STT",
+    "Raspberry Pi"
+  ],
+  "author": "Duy Nguyen",
+  "dependencies": {
+    "mic": "^2.1.1",
+    "rpio": "^0.9.16",
+    "watson-developer-cloud": "^2.0.0"
+  }
+}
