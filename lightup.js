@@ -66,11 +66,11 @@ var commandList = {
 
 /*Initialize the pins*/
 var initPins = function(){
-  rpio.open(config.LIGHT_PIN,rpio.OUTPUT,rpio.LOW);
+  rpio.open(config.Pins.LIGHT_PIN,rpio.OUTPUT,rpio.LOW);
 }
 
 var switchLight = function(gpioVal){
-  rpio.write(config.LIGHT_PIN,gpioVal);
+  rpio.write(config.Pins.LIGHT_PIN,gpioVal);
 }
 // ----  reset LED before exit
 process.on('SIGINT', function () {
