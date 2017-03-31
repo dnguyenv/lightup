@@ -11,7 +11,7 @@ exports.SpeechToText = {
 // en-US_MichaelVoice (the default)
 //Credentials for Watson Text to Speech service
 exports.TextToSpeech = {
-  "voice": "xxxxx",
+  "voice": "en-US_LisaVoice",
   "password": "xxxxx",
   "username": "xxxxx",
   "version":  "v1"
