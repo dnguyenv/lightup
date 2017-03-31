@@ -1,8 +1,7 @@
 // Please replace the username and password with your bluemix credentials
 exports.SpeechToText = {
   "password": "xxxxx",
-  "username": "xxxxx",
-  "version":  "v1"
+  "username": "xxxxx"
 }
 // You can change the voice of the robot to your favorite voice.
 // Some of the available options are:
@@ -13,7 +12,8 @@ exports.SpeechToText = {
 exports.TextToSpeech = {
   "voice": "xxxxx",
   "password": "xxxxx",
-  "username": "xxxxx"
+  "username": "xxxxx",
+  "version":  "v1"
 }
 
 exports.Pins = {

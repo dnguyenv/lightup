@@ -5,7 +5,7 @@ var config = require('./config');  // gets our username and passwords from the c
 var exec = require('child_process').exec;
 var fs = require('fs');
 
-var text_to_speech = watson.text_to_speech(config.TextToSpeech);
+//var text_to_speech = watson.text_to_speech(config.TextToSpeech);
 
 var speech_to_text = watson.speech_to_text(config.SpeechToText);
 
