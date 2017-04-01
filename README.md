@@ -9,7 +9,6 @@ Click [here](https://youtu.be/w4lEJGe1pNU) or on the picture below to see the de
 ## Hardware requirements
 
 - A Raspberry Pi B. I use Raspberry 3 for this tutorial, which has built-in wifi. If you have other models, need to make sure you have Wifi dongle or other ways to get your Pi connected to the internet (eg: sharing through ethernet, etc)
-- HC-SR04 distance sensor
 - Male-female and male-male jumpers, Breadboard
 - BC547 transistor.
 - Songle SRD-05VDC-SL-C relay and 1n4001 diode.
