@@ -1,6 +1,6 @@
 # Thien An Bot Lightup
 
-This recipe guides you through how to connect your Raspberry Pi to IBM Watson services and making a simple robot which can listen to your commands and `turn on`, `turn off` a lamp.
+This recipe guides you through how to connect your Raspberry Pi to IBM Watson services and make a simple robot which can listen to your commands and `turn on`, `turn off` a lamp.
 
 Click [here](https://youtu.be/w4lEJGe1pNU) or on the picture below to see the demo:
 
