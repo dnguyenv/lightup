@@ -12,7 +12,6 @@ Click [here](https://youtu.be/w4lEJGe1pNU) or on the picture below to see the de
 - Male-female and male-male jumpers, Breadboard
 - BC547 transistor.
 - Songle SRD-05VDC-SL-C relay and 1n4001 diode.
-- 220Ohm resistor.
 - Speaker. I use an Anker A7910 mini speaker
 - Lamp and power strip
 
