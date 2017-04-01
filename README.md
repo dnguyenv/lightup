@@ -37,7 +37,7 @@ Follow [this](https://github.com/dnguyenv/distance-bot#create-bluemix-text-to-sp
 
 ### Create Watson speech to text service
 
-Login to [Bluemix](https://bluemix.net) with your registered ID, Go to `Catalog`, Search for `speech to text` , or click [here] (https://console.ng.bluemix.net/catalog/?taxonomyNavigation=iot&search=text%20to%20speech) and select the service.
+Login to [Bluemix](https://bluemix.net) with your registered ID, Go to `Catalog`, Search for `speech to text` , or click [here](https://console.ng.bluemix.net/catalog/?taxonomyNavigation=iot&search=text%20to%20speech) and select the service.
 
 ![images](images/register-tts.png)
 
