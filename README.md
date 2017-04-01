@@ -51,7 +51,7 @@ Clone the source code:
 
 Get into your Pi using SSH or VNC client. From the terminal in your Raspberry Pi, perform this command to get the source code:
 
-`git clone https://github.com/dnguyenv/lightup.git`
+`sudo git clone https://github.com/dnguyenv/lightup.git`
 
 Put your Watson services credentials (both Text to speech and Speech to text service) into the config.js file. You also can configure other values in the file to meet your need.
 
@@ -59,6 +59,8 @@ Run the code:
 
 ```
 cd lightup
-npm install
-npm start
+sudo npm install
+sudo npm start
 ```
+
+Enjoy!
