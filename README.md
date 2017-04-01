@@ -37,13 +37,13 @@ Follow [this](https://github.com/dnguyenv/distance-bot#create-bluemix-text-to-sp
 
 Login to [Bluemix](https://bluemix.net) with your registered ID, Go to `Catalog`, Search for `speech to text` , or click [here](https://console.ng.bluemix.net/catalog/?taxonomyNavigation=iot&search=speech%20to%20text) and select the service.
 
-![images](images/register-tts.png)
+![images](images/register-stt.png)
 
 Name the `service` and `credential` if you want, or just leave them by default, Select `Create`
 
 Once the service is created, go to `Service credentials` , `View credentials` section to record the `username` and `password` information. You will need it later for the app. You can always create a new `credential` to access the service as needed, by selecting `New credential`
 
-![images](images/tts-cre-name.png)
+![images](images/stt-cre-name.png)
 
 ### Clone the code and install dependencies
 
