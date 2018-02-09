@@ -6,6 +6,10 @@ Click [here](https://youtu.be/w4lEJGe1pNU) or on the picture below to see the de
 
 [<img src="https://github.com/dnguyenv/lightup/blob/master/images/thienanbot.png" width="200">](https://youtu.be/w4lEJGe1pNU)
 
+## Architecture overview
+
+![images](images/arch_lightup.png)
+
 ## Hardware requirements
 
 - A Raspberry Pi B. I use Raspberry 3 for this tutorial, which has built-in wifi. If you have other models, need to make sure you have Wifi dongle or other ways to get your Pi connected to the internet (eg: sharing through ethernet, etc)
